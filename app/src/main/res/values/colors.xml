@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="darkgrey">#A9A9A9</color>
+    <color name="purpleshade">#6659B8</color>
+    <color name="offwhite">#E5FAFAFA</color>
+    <color name="silvermedium">#BFBFBF</color>
+    <color name="silver">#EFEFEF</color>
+    <color name="cream">#FECEC9</color>
+    <color name="pink">#ED95AB</color>
+    <color name="orangelight">#EC9E49</color>
+    <color name="coral">#EB9A96</color>
+    <color name="flashwhite">#F0F0F0</color>
+    <color name="lightgrayishorange">#FAE8D4</color>
+    <color name="mediumorange">#EC9E49</color>
+    <color name="lightpurple">#F3E4FE</color>
+    <color name="lightgrayishblue">#DDE1EC</color>
+    
+</resources>

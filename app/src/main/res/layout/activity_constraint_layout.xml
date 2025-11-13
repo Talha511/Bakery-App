@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver"
+    android:fillViewport="true"
+    tools:context=".LinearLayoutActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/delivery_to_1600_amphitheater_way"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futura_bk_bt_book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/ivHeaderArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/arrow"
+            android:src="@drawable/dropdown_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDelivery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/darkgrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDelivery" />
+        <HorizontalScrollView
+            android:id="@+id/filtersScroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filtersContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/filterIcon"
+                    android:layout_width="41dp"
+                    android:layout_height="27dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/roundcolorborder"
+                    android:clipToOutline="true"
+                    android:paddingHorizontal="9dp"
+                    android:src="@drawable/filter_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/chipOrganic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/roundcolorborder"
+                    android:clipToOutline="true"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/organic"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_bk_bt_book"
+                    app:layout_constraintStart_toEndOf="@id/filterIcon"
+                    app:layout_constraintTop_toTopOf="@id/filterIcon" />
+
+                <TextView
+                    android:id="@+id/chipGluten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/roundcolorborder"
+                    android:clipToOutline="true"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/gluten_free"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_bk_bt_book"
+                    app:layout_constraintStart_toEndOf="@id/chipOrganic"
+                    app:layout_constraintTop_toTopOf="@id/chipOrganic" />
+
+                <TextView
+                    android:id="@+id/chipDairy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/roundcolorborder"
+                    android:clipToOutline="true"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="2dp"
+                    android:text="@string/dairy_free"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_bk_bt_book"
+                    app:layout_constraintStart_toEndOf="@id/chipGluten"
+                    app:layout_constraintTop_toTopOf="@id/chipGluten" />
+
+                <TextView
+                    android:id="@+id/chipChocolate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/roundcolorborder"
+                    android:clipToOutline="true"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="2dp"
+                    android:text="Chocolate"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/futura_bk_bt_book"
+                    app:layout_constraintStart_toEndOf="@id/chipDairy"
+                    app:layout_constraintTop_toTopOf="@id/chipDairy" />
+
+                <View
+                    android:id="@+id/filtersEnd"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintStart_toEndOf="@id/chipChocolate"
+                    app:layout_constraintTop_toTopOf="@id/chipChocolate" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+        <TextView
+            android:id="@+id/tvAndroidPicks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/futura_bk_bt_book"
+            android:paddingHorizontal="15dp"
+            android:text="Andriod's Picks"
+            android:textColor="@color/purpleshade"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filtersScroll" />
+        <HorizontalScrollView
+            android:id="@+id/picksScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAndroidPicks">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/picksContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCupcake"
+                    android:layout_width="160dp"
+                    android:layout_height="220dp"
+                    android:layout_margin="18dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/cupcakeTopRect"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/roundedcorner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/cupcakeBottom"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/cupcakeTopRect"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <ImageView
+                            android:id="@+id/ivCupcake"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/circleshape"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/cupckae_img"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvCupcakeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="29dp"
+                            android:text="Cupcake"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivCupcake" />
+
+                        <TextView
+                            android:id="@+id/tvCupcakeTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A Tag Line"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="@id/tvCupcakeTitle"
+                            app:layout_constraintTop_toBottomOf="@id/tvCupcakeTitle" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardDonut"
+                    android:layout_width="160dp"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toEndOf="@id/cardCupcake"
+                    app:layout_constraintTop_toTopOf="@id/cardCupcake">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/donutTopRect"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/roundedcorner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:id="@+id/donutBottomReact"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/donutTopRect"
+                            app:layout_constraintVertical_bias="0.0" />
+                        <ImageView
+                            android:id="@+id/ivDonut"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/circleshape"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/donut_img"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tvDonutTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="29dp"
+                            android:text="Donut"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivDonut" />
+                        <TextView
+                            android:id="@+id/tvDonutTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A Tag Line"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="@id/tvDonutTitle"
+                            app:layout_constraintTop_toBottomOf="@id/tvDonutTitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardStwa"
+                    android:layout_width="160dp"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toEndOf="@id/cardDonut"
+                    app:layout_constraintTop_toTopOf="@id/cardDonut">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/stwaTopRect"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/roundedcorner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:id="@+id/stwaBottomRect"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/stwaTopRect"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <ImageView
+                            android:id="@+id/ivStwa"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/circleshape"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/stwa_img"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvStwaTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="29dp"
+                            android:text="Stwa Shake"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivStwa" />
+
+                        <TextView
+                            android:id="@+id/tvStwaTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A Tag Line"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="@id/tvStwaTitle"
+                            app:layout_constraintTop_toBottomOf="@id/tvStwaTitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardIcecream"
+                    android:layout_width="160dp"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintStart_toEndOf="@id/cardStwa"
+                    app:layout_constraintTop_toTopOf="@id/cardCupcake">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <View
+                            android:id="@+id/iceTopRect"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/roundedcorner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:id="@+id/icebottomRect"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iceTopRect"
+                            app:layout_constraintVertical_bias="0.0" />
+                        <ImageView
+                            android:id="@+id/ivIcecream"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/circleshape"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/icecream_img"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/tvIceTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="29dp"
+                            android:text="Icecream"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivIcecream" />
+                        <TextView
+                            android:id="@+id/tvIceTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A Tag Line"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@id/tvIceTitle"
+                            app:layout_constraintTop_toBottomOf="@id/tvIceTitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTrifle"
+                    android:layout_width="160dp"
+                    android:layout_height="220dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardIcecream"
+                    app:layout_constraintTop_toTopOf="@id/cardCupcake">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <View
+                            android:id="@+id/trifleTopRect"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/roundedcorner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:id="@+id/trifleBottomRect"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@android:color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/trifleTopRect"
+                            app:layout_constraintVertical_bias="0.0" />
+
+
+                        <ImageView
+                            android:id="@+id/ivTrifle"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/circleshape"
+                            android:padding="8dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/trifle_img"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTrifleTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="29dp"
+                            android:text="Trifle"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ivTrifle" />
+
+                        <TextView
+                            android:id="@+id/tvTrifleTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="A Tag Line"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/futura_bk_bt_book"
+                            app:layout_constraintStart_toStartOf="@id/tvTrifleTitle"
+                            app:layout_constraintTop_toBottomOf="@id/tvTrifleTitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/darkgrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/picksScroll" />
+        <TextView
+            android:id="@+id/tvPopular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="15dp"
+            android:text="Popular on Jetsnak"
+            android:textColor="@color/purpleshade"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/futura_bk_bt_book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+        <ImageView
+            android:id="@+id/ivPopularForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/forwardarrow_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPopular"
+            app:layout_constraintEnd_toEndOf="@+id/divider2"
+            app:layout_constraintTop_toTopOf="@+id/tvPopular" />
+        <HorizontalScrollView
+            android:id="@+id/popularScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPopular">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/popularContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/itemBanana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivBanana"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/circleshape"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/binana_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvBananaLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Banana"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="@id/ivBanana"
+                        app:layout_constraintStart_toStartOf="@id/ivBanana"
+                        app:layout_constraintTop_toBottomOf="@id/ivBanana" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Pumpkin Seed -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/itemPumpkin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/itemBanana"
+                    app:layout_constraintTop_toTopOf="@id/itemBanana">
+
+                    <ImageView
+                        android:id="@+id/ivPumpkin"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/circleshape"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pumpkinseed_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPumpkinLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Pumpkin Seed"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="@id/ivPumpkin"
+                        app:layout_constraintStart_toStartOf="@id/ivPumpkin"
+                        app:layout_constraintTop_toBottomOf="@id/ivPumpkin" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Fries -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/itemFries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/itemPumpkin"
+                    app:layout_constraintTop_toTopOf="@id/itemPumpkin">
+
+                    <ImageView
+                        android:id="@+id/ivFries"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/circleshape"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/fries_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvFriesLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Fries"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="@id/ivFries"
+                        app:layout_constraintStart_toStartOf="@id/ivFries"
+                        app:layout_constraintTop_toBottomOf="@id/ivFries" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Chips -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/itemChips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/itemFries"
+                    app:layout_constraintTop_toTopOf="@id/itemFries">
+
+                    <ImageView
+                        android:id="@+id/ivChips"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/circleshape"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/chips_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvChipsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Chips"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="@id/ivChips"
+                        app:layout_constraintStart_toStartOf="@id/ivChips"
+                        app:layout_constraintTop_toBottomOf="@id/ivChips" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/itemPopcone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/itemChips"
+                    app:layout_constraintTop_toTopOf="@id/itemChips">
+
+                    <ImageView
+                        android:id="@+id/ivPopcone"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/circleshape"
+                        android:clickable="true"
+                        android:clipToOutline="true"
+                        android:padding="12dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/popcone_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPopconeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Popcone"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="@id/ivPopcone"
+                        app:layout_constraintStart_toStartOf="@id/ivPopcone"
+                        app:layout_constraintTop_toBottomOf="@id/ivPopcone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/darkgrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/popularScroll" />
+        <TextView
+            android:id="@+id/tvWfh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="15dp"
+            android:paddingTop="10dp"
+            android:text="WFH favourites"
+            android:textColor="@color/purpleshade"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/futura_bk_bt_book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+        <ImageView
+            android:id="@+id/ivWfhForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/forwardarrow_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWfh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvWfh" />
+        <HorizontalScrollView
+            android:id="@+id/wfhScroll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWfh">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/wfhContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wfhBurger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/changecolor"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivBurger"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circleshape"
+                        android:src="@drawable/burger_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvBurgerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Burger"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivBurger" />
+
+                    <TextView
+                        android:id="@+id/tvBurgerTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvBurgerTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wfhChicken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/changecolor"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@id/wfhBurger"
+                    app:layout_constraintTop_toTopOf="@id/wfhBurger">
+
+                    <ImageView
+                        android:id="@+id/ivChicken"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circleshape"
+                        android:src="@drawable/chicken_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvChickenTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Chicken Fried"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivChicken" />
+
+                    <TextView
+                        android:id="@+id/tvChickenTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvChickenTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wfhPizza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/changecolor"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@id/wfhChicken"
+                    app:layout_constraintTop_toTopOf="@id/wfhChicken">
+
+                    <ImageView
+                        android:id="@+id/ivPizza"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circleshape"
+                        android:src="@drawable/pizza_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvPizzaTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Pizza"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivPizza" />
+
+                    <TextView
+                        android:id="@+id/tvPizzaTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvPizzaTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wfhSamosa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/changecolor"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@id/wfhPizza"
+                    app:layout_constraintTop_toTopOf="@id/wfhPizza">
+
+                    <ImageView
+                        android:id="@+id/ivSamosa"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circleshape"
+                        android:src="@drawable/samosa_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvSamosaTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Samosa"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivSamosa" />
+
+                    <TextView
+                        android:id="@+id/tvSamosaTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSamosaTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wfhWalnut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/changecolor"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@id/wfhSamosa"
+                    app:layout_constraintTop_toTopOf="@id/wfhSamosa">
+
+                    <ImageView
+                        android:id="@+id/ivWalnut"
+                        android:layout_width="115dp"
+                        android:layout_height="115dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/circleshape"
+                        android:src="@drawable/walnut_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvWalnutTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Walnut"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivWalnut" />
+
+                    <TextView
+                        android:id="@+id/tvWalnutTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvWalnutTitle" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomNavBackdrop"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:background="#00404040"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wfhScroll">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/navcolor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/navHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/navSearch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivHome"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/home_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivHome" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/navSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/navShop"
+                    app:layout_constraintStart_toEndOf="@id/navHome"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivSearch"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/search_icon"
+                        app:layout_constraintBottom_toTopOf="@+id/tvSearch"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.35" />
+
+                    <TextView
+                        android:id="@+id/tvSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivSearch" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/navShop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/navProfile"
+                    app:layout_constraintStart_toEndOf="@id/navSearch"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivShop"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/shopping_icon"
+                        app:layout_constraintBottom_toTopOf="@+id/tvShop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.35" />
+
+                    <TextView
+                        android:id="@+id/tvShop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shopping"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivShop" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/navProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/navShop"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/account_icon"
+                        app:layout_constraintBottom_toTopOf="@+id/tvProfile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.35" />
+
+                    <TextView
+                        android:id="@+id/tvProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/bottomSpacer"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomNavBackdrop" />
+        <ImageView
+            android:id="@+id/ivPicksForward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/forwardarrow_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAndroidPicks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAndroidPicks" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

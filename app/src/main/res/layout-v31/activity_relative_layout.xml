@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="8dp"
+    android:paddingTop="15dp"
+    tools:context=".RelativeLayoutActivity"
+    android:background="@color/silver">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:id="@+id/delivery_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delivery_to_1600_amphitheater_way"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:paddingStart="20dp" />
+        <ImageView
+            android:id="@+id/img_dropdown_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/dropdown_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/top_bar"
+        android:layout_marginTop="15dp"
+        android:background="@color/darkgrey" />
+    <HorizontalScrollView
+        android:id="@+id/filter_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider1"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="12dp">
+            <ImageView
+                android:id="@+id/filter_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundcolorborder"
+                android:paddingHorizontal="7dp"
+                android:src="@drawable/filter_icon" />
+            <TextView
+                android:id="@+id/chip_organic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/filter_icon"
+                android:layout_marginStart="12dp"
+                android:text="@string/organic"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:background="@drawable/roundcolorborder"
+                android:paddingHorizontal="9dp"/>
+            <TextView
+                android:id="@+id/chip_gluten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/chip_organic"
+                android:layout_marginStart="12dp"
+                android:text="@string/gluten_free"
+                android:textSize="17sp"
+                android:background="@drawable/roundcolorborder"
+                android:paddingHorizontal="9dp" />
+
+            <TextView
+                android:id="@+id/chip_dairy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/chip_gluten"
+                android:layout_marginStart="12dp"
+                android:text="@string/dairy_free"
+                android:textSize="17sp"
+                android:background="@drawable/roundcolorborder"
+                android:paddingHorizontal="9dp"/>
+
+            <TextView
+                android:id="@+id/chip_chocolate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/chip_dairy"
+                android:layout_marginStart="12dp"
+                android:text="Chocolate"
+                android:textSize="17sp"
+                android:background="@drawable/roundcolorborder"
+                android:paddingHorizontal="9dp"/>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+    <RelativeLayout
+        android:id="@+id/android_picks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filter_scroll"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_picks_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android's Picks"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="15dp"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/picks_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/forwardarrow_icon" />
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:id="@+id/picks_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/android_picks"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCupcake"
+                android:layout_width="160dp"
+                android:layout_height="220dp"
+                android:layout_marginStart="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/cupcakeTopRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/roundedcorner"
+                        android:layout_alignParentTop="true" />
+
+                    <View
+                        android:id="@+id/cupcakeBottomRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/cupcakeTopRect"
+                        android:background="@android:color/white" />
+
+                    <ImageView
+                        android:id="@+id/img_cupcake"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circleshape"
+                        android:padding="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cupckae_img"
+                        android:layout_alignParentTop="true" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcakeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_cupcake"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Cupcake"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcakeTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_cupcakeTitle"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:text="A Tag Line"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDonut"
+                android:layout_width="160dp"
+                android:layout_height="220dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/cardCupcake"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <View
+                        android:id="@+id/donutTopRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/roundedcorner"
+                        android:layout_alignParentTop="true" />
+                    <View
+                        android:id="@+id/donutBottomRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/donutTopRect"
+                        android:background="@android:color/white" />
+                    <ImageView
+                        android:id="@+id/ivDonut"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circleshape"
+                        android:padding="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/donut_img"
+                        android:layout_alignParentTop="true" />
+                    <TextView
+                        android:id="@+id/tvDonutTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ivDonut"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Donut"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+                    <TextView
+                        android:id="@+id/tvDonutTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvDonutTitle"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:text="A Tag Line"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardStwa"
+                android:layout_width="160dp"
+                android:layout_height="220dp"
+                android:layout_toEndOf="@id/cardDonut"
+                android:layout_marginStart="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/stwaTopRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/roundedcorner"
+                        android:layout_alignParentTop="true" />
+
+                    <View
+                        android:id="@+id/stwaBottomRect"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/stwaTopRect"
+                        android:background="@android:color/white" />
+
+                    <ImageView
+                        android:id="@+id/img_stwa"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/circleshape"
+                        android:padding="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/stwa_img"
+                        android:layout_alignParentTop="true" />
+
+                    <TextView
+                        android:id="@+id/tv_stwaTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/img_stwa"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Stwa Shake"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+
+                    <TextView
+                        android:id="@+id/tv_stwaTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_stwaTitle"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="2dp"
+                        android:text="A Tag Line"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/futura_bk_bt_book" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/picks_scroll"
+        android:background="@color/darkgrey" />
+    <RelativeLayout
+        android:id="@+id/popular_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider2"
+        android:paddingTop="10dp">
+        <TextView
+            android:id="@+id/tv_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular on Jetsnak"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="15dp" />
+        <ImageView
+            android:id="@+id/img_popular_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/forwardarrow_icon" />
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:id="@+id/popular_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popular_section"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/item_banana"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+                    <ImageView
+                        android:id="@+id/img_banana"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/binana_img"
+                        android:background="@drawable/circleshape"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true" />
+                    <TextView
+                        android:layout_below="@id/img_banana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Banana"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/item_banana1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_toEndOf="@id/item_banana">
+                    <ImageView
+                        android:id="@+id/img_banana1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/binana_img"
+                        android:background="@drawable/circleshape"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true" />
+                    <TextView
+                        android:layout_below="@id/img_banana1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Banana"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <RelativeLayout
+                android:id="@+id/item_banana2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/item_banana1">
+                <ImageView
+                    android:id="@+id/img_banana2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/binana_img"
+                    android:background="@drawable/circleshape"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true" />
+                <TextView
+                    android:layout_below="@id/img_banana2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Banana"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+                <RelativeLayout
+                android:id="@+id/item_banana3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/item_banana2">
+                <ImageView
+                    android:id="@+id/img_banana3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/binana_img"
+                    android:background="@drawable/circleshape"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true" />
+                <TextView
+                    android:layout_below="@id/img_banana3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Banana"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+                <RelativeLayout
+                android:id="@+id/item_banana4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/item_banana3">
+                <ImageView
+                    android:id="@+id/img_banana4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/binana_img"
+                    android:background="@drawable/circleshape"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true" />
+                <TextView
+                    android:layout_below="@id/img_banana4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Banana"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+
+    </HorizontalScrollView>
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/popular_scroll"
+        android:background="@color/darkgrey" />
+    <RelativeLayout
+        android:id="@+id/wfh_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider3"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_wfh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WFH Favourites"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="15dp" />
+
+        <ImageView
+            android:id="@+id/img_wfh_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/forwardarrow_icon" />
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:id="@+id/wfh_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wfh_section"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cupcake_wfh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/img_cupcake_wfh"
+                        android:layout_width="115dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/cupckae_img" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcake_wfh"
+                        android:layout_below="@id/img_cupcake_wfh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cupcake"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:layout_below="@id/tv_cupcake_wfh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cupcake_wfh1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_toEndOf="@id/card_cupcake_wfh"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/img_cupcake_wfh1"
+                        android:layout_width="115dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/cupckae_img" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcake_wfh1"
+                        android:layout_below="@id/img_cupcake_wfh1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cupcake"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:layout_below="@id/tv_cupcake_wfh1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cupcake_wfh2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_toEndOf="@id/card_cupcake_wfh1"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/img_cupcake_wfh2"
+                        android:layout_width="115dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/cupckae_img" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcake_wfh2"
+                        android:layout_below="@id/img_cupcake_wfh2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cupcake"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:layout_below="@id/tv_cupcake_wfh2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_cupcake_wfh3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_toEndOf="@id/card_cupcake_wfh2"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/img_cupcake_wfh3"
+                        android:layout_width="115dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/cupckae_img" />
+
+                    <TextView
+                        android:id="@+id/tv_cupcake_wfh3"
+                        android:layout_below="@id/img_cupcake_wfh3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cupcake"
+                        android:layout_marginTop="5dp" />
+
+                    <TextView
+                        android:layout_below="@id/tv_cupcake_wfh3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A Tag Line"
+                        android:textSize="11sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+    <RelativeLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#00404040"
+        android:elevation="6dp">
+        
+        <RelativeLayout
+            android:id="@+id/nav_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="35dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_home"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/home_icon" />
+
+            <TextView
+                android:layout_below="@id/icon_home"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/nav_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/nav_home"
+            android:layout_marginStart="60dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_search"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/search_icon" />
+
+            <TextView
+                android:layout_below="@id/icon_search"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/nav_shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/nav_search"
+            android:layout_marginStart="60dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_shopping"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/shopping_icon" />
+
+            <TextView
+                android:layout_below="@id/icon_shopping"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shopping"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nav_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_profile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/account_icon" />
+
+            <TextView
+                android:layout_below="@id/icon_profile"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

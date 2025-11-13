@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Bakery</string>
+    <string name="click_mujhy">Click_Mujhy</string>
+    <string name="click_mujhy1">Click_Mujhy 1</string>
+    <string name="click_mujhy2">Click_Mujhy 2</string>
+    <string name="click_mujhy3">Click_Mujhy 3</string>
+    <string name="click_mujhy4">Click_Mujhy 4</string>
+
+    <string name="constraintslayout">ConstraintsLayout</string>
+    <string name="linearlayout">LinearLayout</string>
+    <string name="relativelayout">RelativeLayout</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="banana">Banana</string>
+    <string name="this_is_here">This is here</string>
+    <string name="how_are_u">How are u</string>
+    <string name="arrow">Arrow</string>
+    <string name="delivery_to_1600_amphitheater_way">Delivery to 1600 Amphitheater Way</string>
+    <string name="organic">Organic</string>
+    <string name="gluten_free">Gluten-Free</string>
+    <string name="dairy_free">Dairy-Free</string>
+    <string name="lines">lines</string>
+    <string name="shop_cart">shop cart</string>
+    <string name="jakarta_indonesia">Jakarta, Indonesia</string>
+    <string name="locationvector">locationvector</string>
+    <string name="view_menu">View menu</string>
+    <string name="what_would_you_like_to_eat">What would you like to eat?</string>
+    <string name="search_here">Search here...</string>
+    <string name="search_icon">Search Icon</string>
+</resources>
