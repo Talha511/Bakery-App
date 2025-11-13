@@ -17,5 +17,5 @@ The Sweet Spot Bakery App offers a delightful and intuitive mobile experience fo
 | **1. Splash Screen** | **2. Home Screen** | **3. Product Description Screen ** | **4. CRUD Screen ** |
 | :---: | :---: | :---: | :---: |
 | <img src="app_screenshots/1.jpeg" alt="Splash Screen" width="200"> | <img src="app_screenshots/2.jpeg" alt="Home Screen" width="200"> | <img src="app_screenshots/3.jpeg" alt="Product Description Screen" width="200"> | <img src="app_screenshots/4.jpeg" alt="CRUD Screen Screen" width="200"> |
-| **5. Linear Layouts Screen** | | **6. Relative Layouts Screen** | | **7. Constraints Layouts Screen** | 
-| <img src="app_screenshots/5.jpeg" alt="Linear Layouts Screen" width="200"> | | <img src="app_screenshots/6.jpeg" alt="Relative Layouts Screen" width="200"> | | <img src="app_screenshots/7.jpeg" alt="Constraints Layouts Screen" width="200"> |
+| **5. Linear Layouts Screen** | **6. Relative Layouts Screen** | **7. Constraints Layouts Screen** | 
+| <img src="app_screenshots/5.jpeg" alt="Linear Layouts Screen" width="200"> | <img src="app_screenshots/6.jpeg" alt="Relative Layouts Screen" width="200"> | <img src="app_screenshots/7.jpeg" alt="Constraints Layouts Screen" width="200"> |
